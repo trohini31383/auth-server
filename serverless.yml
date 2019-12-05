@@ -65,13 +65,14 @@ functions:
       - http:
           path: api/token/{code}
           method: get
+           
 
   refreshAccessToken:
     handler: handler.refreshAccessToken
     events:
       - http:
-          path: api/refresh/{refresh_token}
-          method: post        
+          path: api/refresh/{code}
+          method: get        
 
           
 
