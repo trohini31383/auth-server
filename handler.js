@@ -3,6 +3,8 @@
 const axios = require('axios');
 
 
+
+
 module.exports.getAccessToken = async (event) => {
 
   const MEETUP_OAUTH_URL = 'https://secure.meetup.com/oauth2/access'
@@ -24,15 +26,16 @@ module.exports.getAccessToken = async (event) => {
       refresh_token: info.data.refresh_token,
     }),
   };
-};
+}
 
 module.exports.refreshAccessToken = async (event) => {
+
 
   const MEETUP_OAUTH_URL = 'https://secure.meetup.com/oauth2/access'
     + '?client_id=i0ng01ifl76kt2foju7hisn46j'
     + '&client_secret=5uq2hv63r35ev80iu3oj53ljse'
     + '&grant_type=refresh_token'
-    + '&refresh_token=' + event.pathParameters.code
+    + '&refresh_token=' + event.pathParameters.code;
 
 
 
@@ -50,7 +53,7 @@ module.exports.refreshAccessToken = async (event) => {
       refresh_token: info.data.refresh_token,
     }),
   };
-};
+}
 
 
 
